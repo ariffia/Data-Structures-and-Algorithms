@@ -1,0 +1,90 @@
+--------
+* Primes
+--------
+
+IsPrime(x):
+|  if x <= 1:
+|  |  return false
+|  if x == 2:
+|  |  return true
+|  if x % 2 == 0:
+|  |  return false
+|  m = SquareRoot(x)
+|  for i = 3 <= m where i += 2:
+|  |  if x % i == 0:
+|  |  |  return false
+|  return true
+
+Sieve(x):
+|  primes = boolean[x + 1]
+|  Fill(primes, true)
+|  primes[0] = false
+|  primes[1] = false
+|  m = SquareRoot(x)
+|  for i = 2 <= m:
+|  |  if primes[i]:
+|  |  |  for j = i*2 <= x where j += i:  // j can also start @ i*i?
+|  |  |  |  primes[j] = false
+|  return primes
+
+-------------------------------
+* Greatest Common Divisor (GCD)
+-------------------------------
+
+GCD(a, b):
+|  if b == 0
+|  |  return a
+|  GCD(b, a % b)
+
+------------------------------
+* Lowest Common Multiple (LCM)
+------------------------------
+
+LCM(a, b):
+|  return (b / GCD(a, b)) * also
+
+----------
+* Geometry
+----------
+
+R1:
+|  Bottom-left corner x1, y1
+|  Top-right corner x2, y2
+
+R2:
+|  Bottom-left corner x3, y3
+|  Top-right corner x4, y4
+
+R3:
+|  Bottom-left corner Max(x1, x3), Max(y1, y3)
+|  Top-right corner x2, y2 Min(x2, x4), Min(y2, y4)
+
+ExistanceOfR3:
+|  if Max(x1, x3) > Min(x2, x4):
+|  |  return false
+|  if Max(y1, y3) > Min(y2, y4):
+|  |  return false
+|  return true
+
+Pick's Theorem:
+---------------
+
+Area = B/2 + I - 1
+
+Where,
+  B = Number of lattice points on the boundary of the polygon
+  I = Number of lattice points in the interior of the polygon
+
+Euler's Polyhedron Formula
+--------------------------
+
+V - E + F = 2
+
+Where,
+  V = Number of vertices
+  E = Number of edges
+  F = Number of faces
+
+Note:
+- The formula can be applied to a polygon by transforming the polygon
+  to a polyhedron with a flat base
