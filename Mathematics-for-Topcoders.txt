@@ -119,6 +119,25 @@ FromDecimal(n, b):
 * Fractions
 -----------
 
+MultiplyFractions(a, b):
+|  return { a[0] * b[0], a[1] * b[1] }
+
+AddFractions(a, b):
+|  denominator = LCM(a[1], b[1])
+|  return { (denominator / a[1]) * a[0] + (denominator / b[1]) * b[0], denominator }
+
+SubtractFractions(a, b):
+|  denominator = LCM(a[1], b[1])
+|  return { (denominator / a[1]) * a[0] - (denominator / b[1]) * b[0], denominator }
+
+ReduceFraction(a):
+|  c = GCD(a[0], a[1])
+|  b[0] = a[0] / c
+|  b[1] = a[1] / c
+|  return b
+
 -----------------
 * Complex Numbers
 -----------------
+
+Can be represented in the form of a[0] = 'real' and a[1] = 'complex' and need to account for i^2 = -1
