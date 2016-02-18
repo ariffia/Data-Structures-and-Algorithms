@@ -88,3 +88,37 @@ Where,
 Note:
 - The formula can be applied to a polygon by transforming the polygon
   to a polyhedron with a flat base
+
+-------
+* Bases
+-------
+
+ToDecimal(n, b):
+|  if b < 2 or b > 10:
+|  |  return -1
+|  result = 0
+|  multiplier = 1
+|  while n > 0:
+|  |  result = result + (n % 10) * multiplier
+|  |  multiplier = multiplier * b
+|  |  n = n / 10
+|  return result
+
+FromDecimal(n, b):
+|  if b < 2 or b > 10:
+|  |  return -1
+|  result = 0
+|  multiplier = 1
+|  while n > 0:
+|  |  result = result + (n % b) * multiplier
+|  |  multiplier = multiplier * 10
+|  |  n = n / b
+|  return result
+
+-----------
+* Fractions
+-----------
+
+-----------------
+* Complex Numbers
+-----------------
