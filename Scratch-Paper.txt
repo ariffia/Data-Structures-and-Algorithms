@@ -1,0 +1,19 @@
+--------------
+* Backtracking
+--------------
+
+Permutation
+-----------
+
+Swap(A, b, c):
+|  temp = A[b]
+|  A[b] = A[c]
+|  A[c] = temp
+
+Permutate(A, n):
+|  if n == n - 1:
+|  |  Print(A)
+|  for i from n to Length(A) - 1:
+|  |  Swap(A, n, i)
+|  |  Permutate(A, n + 1)
+|  |  Swap(A, n, i)

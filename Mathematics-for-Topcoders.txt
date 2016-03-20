@@ -41,7 +41,7 @@ GCD(a, b):
 ------------------------------
 
 LCM(a, b):
-|  return (b / GCD(a, b)) * also
+|  return (b / GCD(a, b)) * a
 
 ----------
 * Geometry
